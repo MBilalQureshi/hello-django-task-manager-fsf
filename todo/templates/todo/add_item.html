@@ -8,6 +8,8 @@
 <body>
     <h1>Add a todo item:</h1>
     <form method="POST" action="add">
+        <!-- below is the django security measure that tell that data is our own and not from other web apps -->
+        {% csrf_token %}
         <div>
             <p>
                 <label for="id_name">Name: </label>
