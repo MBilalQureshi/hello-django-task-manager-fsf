@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from todo.views import get_todo_list
+from todo.views import get_todo_list, add_item
 
 urlpatterns = [
     # url that user is going to type in, the view function and name
     path('admin/', admin.site.urls),
     # actually a home page tough but we named it get_todo_list
-    path('', get_todo_list, name='get_todo_list')
+    path('', get_todo_list, name='get_todo_list'),
+    path('add', add_item, name='add')
 ]
